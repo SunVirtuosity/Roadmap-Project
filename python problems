@@ -1,0 +1,43 @@
+# Finding the max number within a list
+
+# Define function
+def find_max(list):
+    # Initialize max
+    maximum_num = list[0]
+    # Iterate through numbers to find the highest number
+    for num in list:
+        # Checks if num is greater than the maximum number
+        if num > maximum_num:
+            # Sets the maximum number equal to the higher number
+            maximum_num = num
+    # Return the max number
+    return f'Max number in list: {maximum_num}'
+# List of numbers
+nums = [2, 20, 50, 30, 2, 1]
+# Display output
+print(find_max(nums))
+
+# Finding a desired number within the Fibonacci sequence?
+def fibonnaciSequence(desired_value):
+# Initial values
+    num_a = 0
+    num_b = 1
+    next_num = 0
+    # While loop iterating until the desired result
+    while True:
+        next_num = num_a+num_b # Set next number equal to the sum of a and b
+        num_a = num_b # Set initial value equal to next value
+        num_b = next_num # Set next value equal to the sum
+        print(f'Current Num: {num_b}') # Displaying current num
+        # The condition where the loop iterates. When the desired value is reached, return that the number has been found
+        if num_b == desired_value:
+            return f'Number: {num_b} has been reached!'
+        # If the desired value is not within the Fibonacci Sequence, return that the number is not in the sequence
+        if num_b > desired_value:
+            return f'Number: {desired_value} is not in the Fibonacci Sequence.'
+
+
+# Number 89 is in the Fibonacci Sequence so the while loop iterates until 89 is reached
+print(fibonnaciSequence(89))
+# However, 30 is not in the Fibonacci Sequence. Therefore it will iterate to the next Fibonacci Sequence greater than desired number
+print(fibonnaciSequence(30))
