@@ -10,7 +10,7 @@ nums = [2, 20, 50, 30, 2, 1]
 print(f'The maximum number in the list is: {find_max(nums)}')
 
 # Finding a desired number within the Fibonacci sequence?
-def fibonnaciSequence(desired_value):
+def fibonnaciSequence(desired_value: int):
 # Initial values
     num_a = 0
     num_b = 1
