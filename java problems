@@ -45,11 +45,11 @@ public class JavaRoadmapProject {
             System.out.println("Current Num: " + numB); // Print the current number in the Fibonacci sequence
 
             if (numB == desiredValue) {
-                System.out.println("The number has been reached!");
+                return "The number has been reached!";
                 found = true;
             }
             else if (numB > desiredValue) {
-                System.out.println("The number is not in the sequence.");
+                return "The number is not in the sequence.";
                 found = true;
             }
         }
