@@ -2,20 +2,12 @@
 
 # Define function
 def find_max(list):
-    # Initialize max
-    maximum_num = list[0]
-    # Iterate through numbers to find the highest number
-    for num in list:
-        # Checks if num is greater than the maximum number
-        if num > maximum_num:
-            # Sets the maximum number equal to the higher number
-            maximum_num = num
     # Return the max number
-    return f'Max number in list: {maximum_num}'
+    return max(list)
 # List of numbers
 nums = [2, 20, 50, 30, 2, 1]
 # Display output
-print(find_max(nums))
+print(f'The maximum number in the list is: {find_max(nums)}')
 
 # Finding a desired number within the Fibonacci sequence?
 def fibonnaciSequence(desired_value):
