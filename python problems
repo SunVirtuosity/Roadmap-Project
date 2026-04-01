@@ -28,7 +28,10 @@ def fibonnaciSequence(desired_value):
         if num_b > desired_value:
             return f'Number: {desired_value} is not in the Fibonacci Sequence.'
 
-
+# Input your number here!
+user_num = int(input("Enter a number within the Fibonacci Sequence here: "))
+# Call function
+print(fibonnaciSequence(user_num))
 # Number 89 is in the Fibonacci Sequence so the while loop iterates until 89 is reached
 print(fibonnaciSequence(89))
 # However, 30 is not in the Fibonacci Sequence. Therefore it will iterate to the next Fibonacci Sequence greater than desired number
