@@ -2,6 +2,8 @@
 
 # Define function
 def find_max(list):
+    if not list or len(list) == 0:
+        print("List is empty.")
     # Return the max number
     return max(list)
 # List of numbers
