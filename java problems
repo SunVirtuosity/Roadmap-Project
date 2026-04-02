@@ -13,9 +13,10 @@ public class JavaRoadmapProject {
         Scanner scanner = new Scanner(System.in); // Create a Scanner object to read user input
         System.out.print("Enter a desired value for the Fibonacci sequence:"); // Prompt the user to enter a desired value
         int desiredValue = scanner.nextInt(); // Read the desired value from the user
-        fibonacciSequence(desiredValue); // Call the method to generate the Fibonacci sequence until the desired value is reached
+        System.out.println(fibonacciSequence(desiredValue)); // Print the returned result
         scanner.close(); // Close the Scanner object to prevent resource leaks
     }
+
     // Define a method to find and print the maximum value in the array
     public static void findMax(int[] arr) {
         int max = arr[0]; // Initialize max with the first element of the array
@@ -29,16 +30,16 @@ public class JavaRoadmapProject {
         // Display the maximum value found in the array
         System.out.println("Maximum value in the array is: " + max); 
     }
+
     // Define a method to generate the Fibonacci sequence until a desired value is reached
-    public static void fibonacciSequence(int desiredValue) {
+    public static String fibonacciSequence(int desiredValue) {
         // Initialize the first two number of the sequence
         int numA = 0; // First number in the Fibonacci sequence
         int numB = 1; // Second number in the Fibonacci sequence
         int nextNum = 0; // Next number in the Fibonacci sequence, initialized to 0
-        boolean found = false; // Boolean flag to indicate whether the desired value has been found in the sequence
 
         // While loop to generate the Fibonacci sequence until the desired value is found or exceeded
-        while (found == false) {
+        while (true) {
             nextNum = numA + numB; // Calculating next number in the sequence by adding the previous two numbers
             numA = numB; // Update numA to the value of numB for the next iteration
             numB = nextNum; // Update numB to the value of nextNum for the next iteration
@@ -46,13 +47,10 @@ public class JavaRoadmapProject {
 
             if (numB == desiredValue) {
                 return "The number has been reached!";
-                found = true;
             }
             else if (numB > desiredValue) {
                 return "The number is not in the sequence.";
-                found = true;
             }
         }
-        }
     }
-
+}
