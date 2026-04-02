@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class FocusedRoadmapProject
+{
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Find the maximum value in an array
+        int[] numArray = {10, 20, 30, 50, 60, 10};
+        findMax(numArray);
+
+        // Fibonacci sequence check
+        System.out.print("Enter a desired value for the Fibonacci sequence: ");
+        int desiredValue = scanner.nextInt();
+        System.out.println(fibonacciSequence(desiredValue));
+
+        // Nested loops row/column processing
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+
+        System.out.println("Grid output:");
+        grid(rows, cols);
+
+        scanner.close();
+    }
+
+    // Method to find and print the maximum value in the array
+    public static void findMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            System.out.println("The array is empty or null.");
+            return;
+        }
+
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        System.out.println("Maximum value in the array is: " + max);
+    }
+
+    // Nested loops to process numbers in row and column format
+    public static void grid(int rows, int cols)
+    {
+        int value = 1;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(value + "\t");
+                value++;
+            }
+            System.out.println();
+        }
+    }
+
+    // Method to check whether a desired value appears in the Fibonacci sequence
+    public static String fibonacciSequence(int desiredValue) 
+    {
+        if (desiredValue < 0) {
+            return "Negative numbers are not in the Fibonacci sequence.";
+        }
+
+        if (desiredValue == 0 || desiredValue == 1) {
+            return "The number is in the Fibonacci sequence.";
+        }
+
+        int numA = 0;
+        int numB = 1;
+
+        while (numB < desiredValue) {
+            int nextNum = numA + numB;
+            numA = numB;
+            numB = nextNum;
+            System.out.println("Current Num: " + numB);
+        }
+
+        if (numB == desiredValue) {
+            return "The number is in the Fibonacci sequence.";
+        } else {
+            return "The number is not in the sequence.";
+        }
+    }
+}
