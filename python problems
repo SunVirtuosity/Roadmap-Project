@@ -1,15 +1,15 @@
 # Finding the max number within a list
 
 # Define function
-def find_max(list):
-    if not list or len(list) == 0:
+def find_max(*args):
+    if not args or len(args) == 0:
         print("List is empty.")
     # Return the max number
-    return max(list)
+    return max(args)
 # List of numbers
 nums = [2, 20, 50, 30, 2, 1]
 # Display output
-print(f'The maximum number in the list is: {find_max(nums)}')
+print(f'The maximum number in the list is: {find_max(*nums)}')
 
 # Finding a desired number within the Fibonacci sequence?
 def fibonnaciSequence(desired_value):
