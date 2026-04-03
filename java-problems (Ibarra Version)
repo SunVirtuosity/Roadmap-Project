@@ -14,6 +14,11 @@ public class JavaRoadmapProject {
         System.out.print("Enter a desired value for the Fibonacci sequence:"); // Prompt the user to enter a desired value
         int desiredValue = scanner.nextInt(); // Read the desired value from the user
         System.out.println(fibonacciSequence(desiredValue)); // Print the returned result
+        // 89 is within the Fibonacci sequence!
+        System.out.println(fibonacciSequence(89));
+        // 30 is not within the Fibonacci sequence!
+        System.out.println(fibonacciSequence(30));
+        
 
         // Nested loops row/column processing
         System.out.print("Enter number of rows: ");
