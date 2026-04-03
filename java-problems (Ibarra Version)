@@ -1,1 +1,95 @@
+import java.util.Scanner;
+// This program finds the maximum value in an array of integers.
 
+// Define the main class
+public class JavaRoadmapProject { 
+    // Define the main method
+    public static void main(String[] args) {
+        // Find the maximum value in an array of integers
+        int[] numArray = {10, 20, 30, 50, 60, 10}; // Initialize the array with some values
+        findMax(numArray); // Call the method to find and print the maximum value in the array
+
+        // Generate the Fibonacci sequence until a desired value is reached
+        Scanner scanner = new Scanner(System.in); // Create a Scanner object to read user input
+        System.out.print("Enter a desired value for the Fibonacci sequence:"); // Prompt the user to enter a desired value
+        int desiredValue = scanner.nextInt(); // Read the desired value from the user
+        System.out.println(fibonacciSequence(desiredValue)); // Print the returned result
+
+        // Nested loops row/column processing
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+
+        System.out.println("Grid output:");
+        grid(rows, cols);
+
+        scanner.close(); // Close the Scanner object to prevent resource leaks
+    }
+
+    // Define a method to find and print the maximum value in the array
+    public static void findMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            System.out.println("The array is empty or null.");
+            return; // Exit the method if the array is empty or null
+        }
+
+        int max = arr[0]; // Initialize max with the first element of the array
+        // Iterate through the array to find the maximum value
+        for (int i = 1; i < arr.length; i++) {
+            // If the current element is greater than max, update max
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        // Display the maximum value found in the array
+        System.out.println("Maximum value in the array is: " + max); 
+    }
+
+    // Nested loops to process numbers in row and column format
+    public static void grid(int rows, int cols) 
+    {
+        int value = 1;
+
+        for (int i = 0; i < rows; i++) 
+        {
+            for (int j = 0; j < cols; j++) 
+            {
+                System.out.print(value + "\t");
+                value++;
+            }
+            System.out.println();
+        }
+    }
+
+    // Define a method to generate the Fibonacci sequence until a desired value is reached
+    public static String fibonacciSequence(int desiredValue) 
+    {
+        // Initialize the first two number of the sequence
+        int numA = 0; // First number in the Fibonacci sequence
+        int numB = 1; // Second number in the Fibonacci sequence
+        int nextNum = 0; // Next number in the Fibonacci sequence, initialized to 0
+
+        if (desiredValue == 0) {
+            return "The number has been reached!";
+        }
+        if (desiredValue == 1) {
+            return "The number has been reached!";
+        }
+
+        // While loop to generate the Fibonacci sequence until the desired value is found or exceeded
+        while (true) {
+            nextNum = numA + numB; // Calculating next number in the sequence by adding the previous two numbers
+            numA = numB; // Update numA to the value of numB for the next iteration
+            numB = nextNum; // Update numB to the value of nextNum for the next iteration
+            System.out.println("Current Num: " + numB); // Print the current number in the Fibonacci sequence
+
+            if (numB == desiredValue) {
+                return "The number has been reached!";
+            }
+            else if (numB > desiredValue) {
+                return "The number is not in the sequence.";
+            }
+        }
+    }
+}
